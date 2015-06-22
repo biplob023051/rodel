@@ -79,8 +79,7 @@ public function changepassword($email='')
 		if($this->request->is('post'))
 		{								
 		    //print_r($this->request->data);exit;
-		    $this->User->unbindModel(array('hasMany' => array('Sheet'), 'hasOne' => array('TeacherSheet')));
-			$user = $this->User->find('first',array('conditions'=>array('User.user_password'=>$this->request->data['User']['password'],'User.email'=>$this->request->data['User']['email'])));	
+		    $user = $this->User->find('first',array('conditions'=>array('User.user_password'=>$this->request->data['User']['password'],'User.email'=>$this->request->data['User']['email'])));	
 			//print_r($user);
 			if($user)
 			{					
@@ -125,22 +124,22 @@ public function changepassword($email='')
 		$this->layout='math';
 		$userData = $this->Session->read('user');
                 if(sizeof($userData)>0){
-                	// check if form post 
+                	// biplob start
+                	$this->Session->delete('Sheet');
+					$this->Session->delete('SheetPage');
+                	// check if form post  
                 	if ($this->request->is(array('post','put'))) {
-	                	$this->User->Sheet->create();
-	                	$this->request->data['Sheet']['user_id'] = $userData['User']['id'];
-	                	$this->request->data['Sheet']['type'] = $userData['User']['user_role'];
-	                	if ($this->User->Sheet->save($this->request->data)) {
-	                		$this->Session->delete('Sheet');
-	                		$this->Session->write('Sheet.id', $this->User->Sheet->id);
-	                		$this->Session->write('Sheet.name', $this->request->data['Sheet']['name']);
-	                	}
+                		$this->Session->write('Sheet.name', $this->request->data['Sheet']['name']);
 	                }
-	    if (($userData['User']['user_role'] == 'mathspecialist') || $userData['User']['user_role'] == 'admin') {
-	    	$this->User->unbindModel(array('hasOne' => array('TeacherSheet')));
-	    } else {
-	    	$this->User->unbindModel(array('hasMany' => array('Sheet')));
-	    }
+	       			// load all saved sheet
+					$this->loadModel('Sheet');
+					$this->Sheet->unbindModel(array('hasMany' => array('SheetPage'), 'hasOne' => array('TeacherPage')));
+					$sheets = $this->Sheet->find('all', array(
+						'conditions' => array('Sheet.user_id' => $userData['User']['id']),
+						'fields' => array('Sheet.id', 'Sheet.name')
+					));
+					$this->set(compact('sheets'));
+	                // biplob end
 		$userDetail = $this->User->find('first',array('conditions'=>array('User.id'=>$userData['User']['id'])));        
                 $query="select * from grade_levels";
                 $gradeLevel= $this->User->query($query);
@@ -171,7 +170,7 @@ else{echo "<li><a href='#'>No Topics Found</a></li>";}
 	{
 		// save domain id on session for future reference
 		$this->Session->write('domain_id', $_POST['id']);	
-		$questions=$this->User->query("select * from questions where grade_id=".$_POST['gid']." && topic_id=".$_POST['id']." && domain_id=".$_POST['id']);
+		$questions=$this->User->query("select * from questions where grade_id=".$_POST['gid']." && topic_id=".$_POST['tid']." && domain_id=".$_POST['id']);
                 $countvalue=sizeof($questions);                
                 if($countvalue>0){
                echo '<ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">';
@@ -354,37 +353,105 @@ else{echo "<li><a href='#'>No Topics Found</a></li>";}
 				$params[$key]['Question']['file_name'] = $question['Question']['file_name'];
 				$params[$key]['Question']['size'] = $question['Question']['size'];
 			}
-			$sheetData['params'] = json_encode($params);
+			$sheetData = json_encode($params);
 		} else {
-			$sheetData['params'] = NULL;
-		} 
-		// prepare data to save
-		$c_user = $this->Session->read('user');
-		$sheetData['id'] = $this->Session->read('Sheet.id');
-		$sheetData['domain_id'] = $this->Session->read('domain_id');
-		$sheetData['type'] = $c_user['User']['user_role'];
-		
-		if ($this->User->Sheet->save($sheetData)) {
-			$response['result'] = 1;
-			$response['message'] = __('Page saved successfully.');
- 		} else {
- 			$response['result'] = 0;
-			$response['message'] = __('Page saved failed. Something went wrong.');
+			$sheetData = NULL;
 		}
-		echo json_encode($response);
+		$c_user = $this->Session->read('user');
+		if ($c_user['User']['user_role'] == 'teacher') {
+			$this->Session->write('SheetPage.0', $sheetData);
+		} 
 	}
+
+	/*
+	* Teacher page review
+	*/
+	public function review() {
+		$this->layout = 'review';
+		$review_data = $this->Session->read('SheetPage');
+		if (empty($review_data)) {
+			return $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
+		}
+		$this->set('questions', json_decode($review_data[0], true));
+		$this->set('page_count', count($review_data));
+
+		$userData = $this->Session->read('user');
+		if(sizeof($userData)>0){
+			$userDetail = $this->User->find('first',array('conditions'=>array('User.id'=>$userData['User']['id'])));        
+			$this->set('userDetail',$userDetail);
+			$this->set('selectGrade',"Grade Level");
+			$this->set('selectTopics',"Math topics &amp; tips");
+			$this->set('selectDomains',"Domains");
+		}
+	}
+
+	/*
+	* Teacher page save
+	*/
+	public function ajax_savepage(){
+		$this->autoRender = false;
+		if (!$this->Session->check('Sheet.id')){
+			$c_user = $this->Session->read('user');
+			$sheetPageData = $this->Session->read('SheetPage');
+			// if ($this->Session->check('Sheet.id')){
+			// 	$sheetData['Sheet']['id'] = $this->Session->read('Sheet.id');
+			// 	$sheetData['TeacherPage']['sheet_id'] = $this->Session->read('Sheet.id');
+			// }
+			$sheetData['Sheet']['name'] = $this->Session->read('Sheet.name');
+			$sheetData['Sheet']['user_id'] = $c_user['User']['id'];
+			$sheetData['Sheet']['type'] = $c_user['User']['user_role'];
+			$sheetData['TeacherPage']['params'] = $sheetPageData[$this->request->data['save_index']];
+			$this->loadModel('Sheet');
+			$this->Sheet->saveAll($sheetData);
+			$this->Session->write('Sheet.id', $this->Sheet->id);
+		}
+	}
+
+	/*
+	* Teacher print page
+	*/
+	public function ajax_printpage() {
+		$this->layout = 'ajax';
+		$review_data = $this->Session->read('SheetPage');
+		if (empty($review_data)) {
+			return $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
+		}
+		$this->set('questions', json_decode($review_data[$this->request->data['save_index']], true));
+		$this->set('page_count', count($review_data));
+	}
+
+	/*
+	* remove order on page delete
+	*/
+	public function remove_order() {
+		$this->autoRender = false;
+		$c_user = $this->Session->read('user');
+		if ($c_user['User']['user_role'] == 'teacher') {
+			$this->Session->delete('Sheet.1.page');
+		}
+	}
+
 
 	/*
 	* load save sheet for edit
 	*/
 	public function ajax_edit_currentsheet() {
 		$this->layout = 'ajax';
-		$sheet = $this->User->Sheet->findById($this->request->data['id']);
+		$this->loadModel('Sheet');
+		$c_user = $this->Session->read('user');
+		if ($c_user['User']['user_role'] == 'teacher') {
+			$this->Sheet->unbindModel(array('hasMany' => array('SheetPage')));
+		} else {
+			$this->Sheet->unbindModel(array('hasOne' => array('TeacherPage')));
+		}
+		$sheet = $this->Sheet->findByIdAndType($this->request->data['id'], $c_user['User']['user_role']);
 		$this->Session->delete('Sheet');
+		$this->Session->delete('SheetPage');
 		$this->Session->write('Sheet.id', $sheet['Sheet']['id']);
 		$this->Session->write('Sheet.name', $sheet['Sheet']['name']);
-		if (!empty($sheet['Sheet']['params'])) {
-			$questions = json_decode($sheet['Sheet']['params'], true);
+		// for teacher
+		if (!empty($sheet['TeacherPage']['params'])) {
+			$questions = json_decode($sheet['TeacherPage']['params'], true);
 		} else {
 			$questions = array();
 		}

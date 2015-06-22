@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-	Rodel-math
-	</title>
-	<meta charset="UTF-8" />
-	<!--- Meta tag viewport -->
-	  <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0" /> 
-	  <meta name="viewport" content="user-scalable = yes">
-	<!--- css style -->
-	<link href="<?php echo $this->html->url('/css/style.css')?>" type="text/css" rel="stylesheet"/>
+  <title>
+  Rodel-math
+  </title>
+  <meta charset="UTF-8" />
+  <!--- Meta tag viewport -->
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0" /> 
+    <meta name="viewport" content="user-scalable = yes">
+  <!--- css style -->
+  <link href="<?php echo $this->html->url('/css/style.css')?>" type="text/css" rel="stylesheet"/>
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
@@ -17,23 +17,23 @@
 
 
 
-	<link href="<?php echo $this->html->url('/fonts/fonts.css');?>" type="text/css" rel="stylesheet"/>
-	<link rel="stylesheet" href="<?php echo $this->html->url('/css/jquery.mCustomScrollbar.css');?>">
+  <link href="<?php echo $this->html->url('/fonts/fonts.css');?>" type="text/css" rel="stylesheet"/>
+  <link rel="stylesheet" href="<?php echo $this->html->url('/css/jquery.mCustomScrollbar.css');?>">
 </head>
 <body style="cursor:auto">
 <div class="layout">
-	<?php echo $this->element('header'); ?>
+  <?php echo $this->element('header'); ?>
 
 
 
 <section class="section">
-		<div class="inner-container">
-			<div class="scroll-container" id="figurecont" style="float:left;margin-top:25px;width: 64%;margin-bottom: 80px;">
+    <div class="inner-container">
+      <div class="scroll-container" id="figurecont" style="float:left;margin-top:25px;width: 64%;margin-bottom: 80px;">
                       
       </div>
-			
-			<div class="right" id="right_content">
-				<p><?php 
+      
+      <div class="right" id="right_content">
+        <p><?php 
               if ($this->Session->check('Sheet')) {
                 echo $this->Session->read('Sheet.name'); 
               } else {
@@ -41,59 +41,59 @@
               }
           ?>
         </p>
-				<div class="teacher-right">
-					<div class="drag ui-widget-content ui-state-default" id="trash">
-						<div><img src="<?php echo $this->html->url('/img/down-arrow.jpg');?>" alt="down-arrow" id="down-arrow">
-						<h2 id="pro">Drag Problems Here</h2></div>
-					</div>
-					<div class="teacher-problembox">
-						<div class="problembox-title"><h4>Plan-What strategy will you use to help you solve this problem?</h4></div>
-						<div class="problembox-content"><p>Solve</p></div>
-						<div class="problembox-bottom">
-							<div class="answer-label">Answer with label</div>
-							<div class="answer-check">Check-Answer the question(s) with a complete sentence.</div>
-						</div>
-					</div>
-				</div>
-				<ul>
-					<li><input type="submit" id="delete" value="Delete Pg"/></li>
-				</ul>
-				<div class="review-btn"><input type="hidden" name="problemvalue" id="problemvalue"><input type="submit" class="review" value="Review"/></div>
-			</div>
-		</div>
-	</section>
-	<footer class="footer">
-		<div class="inner-container">
-			<div class="left">
-				<img src="<?php echo $this->html->url('/img/footer-logo.jpg');?>" alt="footer-logo">
-			</div>
-			<div class="right">
-				<h6>RodelAZ.org</h6>
-				<p>&copy;2015 Rodel Foundation of Arizona</p>
-			</div>
-		</div>
-	</footer>
+        <div class="teacher-right">
+          <div class="drag ui-widget-content ui-state-default" id="trash">
+            <div><img src="<?php echo $this->html->url('/img/down-arrow.jpg');?>" alt="down-arrow" id="down-arrow">
+            <h2 id="pro">Drag Problems Here</h2></div>
+          </div>
+          <div class="teacher-problembox">
+            <div class="problembox-title"><h4>Plan-What strategy will you use to help you solve this problem?</h4></div>
+            <div class="problembox-content"><p>Solve</p></div>
+            <div class="problembox-bottom">
+              <div class="answer-label">Answer with label</div>
+              <div class="answer-check">Check-Answer the question(s) with a complete sentence.</div>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><input type="submit" id="delete" value="Delete Pg"/></li>
+        </ul>
+        <div class="review-btn"><?php echo $this->Html->link(__('Review'),array('controller' => 'users', 'action' => 'review'), array('class'=>'review'));?></div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="inner-container">
+      <div class="left">
+        <img src="<?php echo $this->html->url('/img/footer-logo.jpg');?>" alt="footer-logo">
+      </div>
+      <div class="right">
+        <h6>RodelAZ.org</h6>
+        <p>&copy;2015 Rodel Foundation of Arizona</p>
+      </div>
+    </div>
+  </footer>
 </div>
 
 </script>
 <script src="<?php echo $this->html->url('/js/placeholders.min.js');?>"></script>
-	
-	<!-- custom scrollbar plugin -->
-	<script src="<?php echo $this->html->url('/js/jquery.mCustomScrollbar.concat.min.js');?>"></script>
-	
-	<script>
-		(function($){
-			$(window).load(function(){
+  
+  <!-- custom scrollbar plugin -->
+  <script src="<?php echo $this->html->url('/js/jquery.mCustomScrollbar.concat.min.js');?>"></script>
+  
+  <script>
+    (function($){
+      $(window).load(function(){
 
-				$("#content-4").mCustomScrollbar({
-					theme:"rounded-dots",
-					scrollInertia:400
-				});
-	
-			
-			});
-		})(jQuery);
-	</script>
+        $("#content-4").mCustomScrollbar({
+          theme:"rounded-dots",
+          scrollInertia:400
+        });
+  
+      
+      });
+    })(jQuery);
+  </script>
  
   <style>
   #gallery { float: left; min-height: 12em; }
@@ -108,9 +108,23 @@
   #trash h4 { line-height: 16px; margin: 0 0 0.4em; }
   #trash h4 .ui-icon { float: left; }
   #trash .gallery h5 { display: none; }
-  .ui-draggable-dragging { width: 300px; height: 200px; }
+  #gallery .ui-draggable-dragging { width: 300px; height: 200px; }
+  /*#trash .ui-draggable-dragging { width: 100px !important; height:  50px !important; border: 1px solid red;}*/
+  .review {
+    background-color: #ffffff;
+    color: #4f8db3;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 15px;
+    border: 1px solid #4f8db3;
+    height: 24px;
+    width: 65px;
+    padding: 10px;
+  }
   </style>
   <script>
+  // initially when page load set cookie 0 for number of item
+  setCookie("item_size", 0, 1);
 function drag_images(){
 var imgsize;
   $(function() {
@@ -134,8 +148,6 @@ var imgsize;
       activeClass: "ui-state-highlight",
       drop: function( event, ui ) {
         imgsize=ui.draggable.find("img").attr("imgsize");
-        ui.draggable.find(".ui-icon-zoomin").show();
-        ui.draggable.find(".ui-icon-trash").show();
         item_size = parseInt(getCookie("item_size"));
         if (imgsize == 'F') {
           item_size = item_size + 4;
@@ -145,6 +157,8 @@ var imgsize;
           item_size = item_size + 1;
         }
         if (item_size <= 4) {
+          ui.draggable.find(".ui-icon-zoomin").show();
+          ui.draggable.find(".ui-icon-trash").show();
           deleteImage( ui.draggable );
         } else {
           //nextPage(ui.draggable);
@@ -245,7 +259,7 @@ var imgsize;
             .remove()
           .end()
         
-          .append( trash_icon )
+          //.append( trash_icon )
           .find( "img" )
             
           .end()
@@ -311,11 +325,22 @@ var imgsize;
       } else if ( $target.is( "a.ui-icon-zoomin" ) ) {
         viewLargerImage( $target );
       } else if ( $target.is( "a.ui-icon-refresh" ) ) {
-        recycleImage( $item );
+        // remove inline style for further drop
+        $item.attr('style', '');
+        $item.find("img").attr('style', '');
+        $item.find(".ui-icon").css('display', 'none');
+        $item.find(".ui-icon").css('display', 'none');
+        recycleImage($item);
       }
  
       return false;
     });
+  });
+}
+
+function removeInlineStyle($item) {
+  $('#element').attr('style', function(i, style) {
+      return style.replace(/display[^;]+;?/g, '');
   });
 }
 
@@ -351,6 +376,18 @@ function checkCookie() {
        }
     }
 }
+
+// $("#delete").click(function(event) {
+//   event.preventDefault();
+//   $.ajax({
+//         data: { items : items },
+//         type: "GET",
+//         url: "/users/remove_order",
+//         success: function(data) {
+//           console.log(data);     
+//         }       
+//   });    
+// });
 
   </script>
 

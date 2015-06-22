@@ -16,24 +16,23 @@
 					<div class="menu">
 						<ul>
 							<li><a href="#">New worksheet <span><img src="<?php echo $this->html->url('/img/menu-icon.png')?>" alt="icon" /></span></a>
-								<?php if ((isset($userDetail['TeacherSheet']) && empty($userDetail['TeacherSheet']['id'])) || (isset($userDetail['Sheet']))) : ?>
-									<ul class="dropdown">
-										<li>
-											<?php 
-												echo $this->Form->create('User', array(
-											            'class' => 'form-horizontal',
-											            'type' => 'file',
-											            'novalidate'=>'novalidate'
-											        ));  
-												echo $this->Form->input('Sheet.name', array('label'=>false, 'class' => 'dp-textbox', 'placeholder' => __('Kevins additions')));
-												echo $this->Form->submit(__('Go'), array(
-							                        'div' => false,
-							                        'class' => 'dp-textbox-btn'
-							                    )); 
-						                    ?>
-										</li>
-									</ul>
-								<?php endif; ?>
+								<ul class="dropdown">
+									<li>
+										<?php 
+											echo $this->Form->create('User', array(
+										            'class' => 'form-horizontal',
+										            'type' => 'file',
+										            'novalidate'=>'novalidate',
+										            'url' => array('controller' => 'users', 'action' => 'dashboard')
+										        ));  
+											echo $this->Form->input('Sheet.name', array('label'=>false, 'class' => 'dp-textbox', 'placeholder' => __('Kevins additions')));
+											echo $this->Form->submit(__('Go'), array(
+						                        'div' => false,
+						                        'class' => 'dp-textbox-btn'
+						                    )); 
+					                    ?>
+									</li>
+								</ul>
 							</li>
 							<li><a href="#"><?php echo $selectGrade;?> <span><img src="<?php echo $this->html->url('/img/menu-icon.png')?>" alt="icon" /></span></a>     <ul class="dropdown" id="gDropdown">
 									<?php
@@ -57,18 +56,13 @@
 							</li>
 							<li><a href="#">Saved worksheets <span><img src="<?php echo $this->html->url('/img/menu-icon.png')?>" alt="icon" /></span></a>
 								<ul class="dropdown">
-									<?php if($userDetail['User']['user_role'] == 'mathspecialist') : 
-									?>	
-										<?php if (!empty($userDetail['Sheet'])) : ?>
-											<?php foreach ($userDetail['Sheet'] as $key => $sheet) : ?>
-												<li><a href='#' onclick=laodsheet(<?php echo $sheet['id']; ?>)><?php echo $sheet['name']; ?></a></li>
-											<?php endforeach; ?>
-										<?php endif; ?>
-									<?php elseif($userDetail['User']['user_role'] == 'teacher') : ?>
-										<?php if (!empty($userDetail['TeacherSheet'])) : ?>
-											<li><a href='#' onclick=laodsheet(<?php echo $userDetail['TeacherSheet']['id']; ?>)><?php echo $userDetail['TeacherSheet']['name']; ?></a></li>
-										<?php endif; ?>
+									
+									<?php if (!empty($sheets)) : ?>
+										<?php foreach ($sheets as $key => $sheet) : ?>
+											<li><a href='#' onclick=laodsheet(<?php echo $sheet['Sheet']['id']; ?>)><?php echo $sheet['Sheet']['name']; ?></a></li>
+										<?php endforeach; ?>
 									<?php endif; ?>
+									
 								</ul>
 							</li>
 						</ul>
@@ -140,7 +134,7 @@ function pics(tid,gid,id){
                 if(result){  
                     //show that the username is available  
                     $('#figurecont').html(result);
-                    setCookie("item_size", 0, 1); 
+                    //setCookie("item_size", 0, 1); 
                     drag_images(); 
 $('#liloader').hide();
                } 
@@ -156,14 +150,16 @@ function laodsheet(id){
     $.post("/users/ajax_edit_currentsheet", { id: id }, function(result) {  
         if(result){  
             $('#right_content').html(result); 
+            drag_images();
+	        $('#liloader').hide();
         }
-        $.post("/users/ajax_edit_availablesheet", { id: id }, function(htmlData) {  
-	        if(htmlData){  
-	            $('#figurecont').html(htmlData); 
-	            drag_images();
-	            $('#liloader').hide();
-	        } 
-	    }); 
+     //    $.post("/users/ajax_edit_availablesheet", { id: id }, function(htmlData) {  
+	    //     if(htmlData){  
+	    //         $('#figurecont').html(htmlData); 
+	    //         drag_images();
+	    //         $('#liloader').hide();
+	    //     } 
+	    // }); 
     });  
 }
 </script>
