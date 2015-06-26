@@ -28474,3 +28474,364 @@ Stack Trace:
 #15 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #16 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #17 {main}
+2015-06-22 14:24:34 Error: Fatal Error (1): Call to a member function delete() on a non-object in [C:\xampp\htdocs\rodel\app\Controller\UsersController.php, line 371]
+2015-06-22 14:24:34 Error: [FatalErrorException] Call to a member function delete() on a non-object
+Request URL: /users/review
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 371)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 371, Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 371, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-22 17:51:54 Error: Fatal Error (1): Call to a member function unbindModel() on a non-object in [C:\xampp\htdocs\rodel\app\Controller\UsersController.php, line 414]
+2015-06-22 17:51:54 Error: [FatalErrorException] Call to a member function unbindModel() on a non-object
+Request URL: /users/ajax_savepage
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 414)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 414, Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 414, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-22 18:18:16 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-22 18:20:02 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-22 18:22:28 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-22 18:22:44 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-22 18:33:06 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Sheet.type' in 'where clause'
+Request URL: /users/dashboard
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `SheetPa...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `SheetPa...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1339): DboSource->fetchAll('SELECT `SheetPa...', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1201): DboSource->fetchAssociated(Object(Sheet), 'SELECT `SheetPa...', Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1112): DboSource->queryAssociation(Object(Sheet), Object(AppModel), 'hasMany', 'SheetPage', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#7 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('all', Array)
+#8 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(160): Model->find('all', Array)
+#9 [internal function]: UsersController->dashboard()
+#10 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-06-22 18:36:44 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Sheet.type' in 'where clause'
+Request URL: /users/dashboard
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `SheetPa...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `SheetPa...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1339): DboSource->fetchAll('SELECT `SheetPa...', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1201): DboSource->fetchAssociated(Object(Sheet), 'SELECT `SheetPa...', Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1112): DboSource->queryAssociation(Object(Sheet), Object(AppModel), 'hasMany', 'SheetPage', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#7 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('all', Array)
+#8 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(160): Model->find('all', Array)
+#9 [internal function]: UsersController->dashboard()
+#10 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2015-06-23 07:23:57 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-23 21:17:00 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-24 22:08:44 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-24 22:12:03 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-25 01:33:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Sheet.type' in 'where clause'
+Request URL: /users/ajax_edit_currentsheet
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `SheetPa...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `SheetPa...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1339): DboSource->fetchAll('SELECT `SheetPa...', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1201): DboSource->fetchAssociated(Object(Sheet), 'SELECT `SheetPa...', Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1112): DboSource->queryAssociation(Object(Sheet), Object(AppModel), 'hasMany', 'SheetPage', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#7 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('first', Array)
+#8 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(800): DboSource->query('findByIdAndType', Array, Object(Sheet))
+#10 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(526): Model->__call('findByIdAndType', Array)
+#11 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(526): Sheet->findByIdAndType('7', 'math specialist')
+#12 [internal function]: UsersController->ajax_edit_currentsheet()
+#13 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#14 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#15 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#16 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}
+2015-06-25 01:33:53 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Sheet.type' in 'where clause'
+Request URL: /users/ajax_edit_currentsheet
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `SheetPa...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `SheetPa...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1339): DboSource->fetchAll('SELECT `SheetPa...', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1201): DboSource->fetchAssociated(Object(Sheet), 'SELECT `SheetPa...', Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1112): DboSource->queryAssociation(Object(Sheet), Object(AppModel), 'hasMany', 'SheetPage', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#7 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('first', Array)
+#8 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(800): DboSource->query('findByIdAndType', Array, Object(Sheet))
+#10 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(526): Model->__call('findByIdAndType', Array)
+#11 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(526): Sheet->findByIdAndType('7', 'math specialist')
+#12 [internal function]: UsersController->ajax_edit_currentsheet()
+#13 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#14 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#15 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#16 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}
+2015-06-25 01:39:31 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Sheet.type' in 'where clause'
+Request URL: /users/ajax_edit_currentsheet
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `SheetPa...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `SheetPa...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1339): DboSource->fetchAll('SELECT `SheetPa...', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1201): DboSource->fetchAssociated(Object(Sheet), 'SELECT `SheetPa...', Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1112): DboSource->queryAssociation(Object(Sheet), Object(AppModel), 'hasMany', 'SheetPage', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#7 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('first', Array)
+#8 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(800): DboSource->query('findByIdAndType', Array, Object(Sheet))
+#10 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(528): Model->__call('findByIdAndType', Array)
+#11 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(528): Sheet->findByIdAndType('7', 'math specialist')
+#12 [internal function]: UsersController->ajax_edit_currentsheet()
+#13 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#14 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#15 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#16 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}
+2015-06-25 01:40:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Sheet.type' in 'where clause'
+Request URL: /users/ajax_edit_currentsheet
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `SheetPa...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `SheetPa...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1339): DboSource->fetchAll('SELECT `SheetPa...', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1201): DboSource->fetchAssociated(Object(Sheet), 'SELECT `SheetPa...', Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1112): DboSource->queryAssociation(Object(Sheet), Object(AppModel), 'hasMany', 'SheetPage', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#7 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('first', Array)
+#8 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(800): DboSource->query('findByIdAndType', Array, Object(Sheet))
+#10 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(528): Model->__call('findByIdAndType', Array)
+#11 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(528): Sheet->findByIdAndType('7', 'math specialist')
+#12 [internal function]: UsersController->ajax_edit_currentsheet()
+#13 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#14 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#15 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#16 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}
+2015-06-25 01:41:28 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Sheet.type' in 'where clause'
+Request URL: /users/ajax_edit_currentsheet
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `SheetPa...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `SheetPa...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1339): DboSource->fetchAll('SELECT `SheetPa...', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1201): DboSource->fetchAssociated(Object(Sheet), 'SELECT `SheetPa...', Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1112): DboSource->queryAssociation(Object(Sheet), Object(AppModel), 'hasMany', 'SheetPage', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#7 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('first', Array)
+#8 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(800): DboSource->query('findByIdAndType', Array, Object(Sheet))
+#10 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(528): Model->__call('findByIdAndType', Array)
+#11 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(528): Sheet->findByIdAndType('7', 'math specialist')
+#12 [internal function]: UsersController->ajax_edit_currentsheet()
+#13 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#14 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#15 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#16 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}
+2015-06-25 01:42:05 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Sheet.type' in 'where clause'
+Request URL: /users/ajax_edit_currentsheet
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `SheetPa...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `SheetPa...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1339): DboSource->fetchAll('SELECT `SheetPa...', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1201): DboSource->fetchAssociated(Object(Sheet), 'SELECT `SheetPa...', Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1112): DboSource->queryAssociation(Object(Sheet), Object(AppModel), 'hasMany', 'SheetPage', Array, Array, true, Array, 0, Array)
+#6 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#7 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('first', Array)
+#8 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(597): Model->find('first', Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(800): DboSource->query('findById', Array, Object(Sheet))
+#10 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(528): Model->__call('findById', Array)
+#11 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(528): Sheet->findById('7')
+#12 [internal function]: UsersController->ajax_edit_currentsheet()
+#13 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#14 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#15 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#16 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}
+2015-06-25 03:27:48 Error: Fatal Error (1): Unsupported operand types in [C:\xampp\htdocs\rodel\lib\Cake\Routing\Router.php, line 801]
+2015-06-25 03:27:48 Error: [FatalErrorException] Unsupported operand types
+Request URL: /users/dashboard/
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Unsupported ope...', 'C:\xampp\htdocs...', 801)
+#1 [internal function]: ErrorHandler::handleError(1, 'Unsupported ope...', 'C:\xampp\htdocs...', 801, Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Unsupported ope...', 'C:\xampp\htdocs...', 801, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-25 03:39:04 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'SheetPage.params' in 'field list'
+Request URL: /users/review/13
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Sheet`....', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `Sheet`....', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1077): DboSource->fetchAll('SELECT `Sheet`....', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('first', Array)
+#6 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(463): Model->find('first', Array)
+#7 [internal function]: UsersController->review('13')
+#8 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-06-25 03:39:36 Error: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'SheetPage'
+Request URL: /users/review/13
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Sheet`....', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `Sheet`....', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1077): DboSource->fetchAll('SELECT `Sheet`....', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('first', Array)
+#6 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(463): Model->find('first', Array)
+#7 [internal function]: UsersController->review('13')
+#8 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-06-25 03:41:43 Error: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'SheetPage'
+Request URL: /users/review/13
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `Sheet`....', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `Sheet`....', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1077): DboSource->fetchAll('SELECT `Sheet`....', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(Sheet), Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('first', Array)
+#6 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(469): Model->find('first', Array)
+#7 [internal function]: UsersController->review('13')
+#8 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-06-26 12:02:56 Error: [MissingActionException] Action UsersController::ajax_search_image() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'ajax_search_image',
+)
+Request URL: /users/ajax_search_image
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-26 16:47:05 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-26 16:49:23 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

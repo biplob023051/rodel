@@ -9,14 +9,14 @@
 						<p>Hi, <?php echo $userDetail['User']['first_name']." ".$userDetail['User']['last_name'];?> <a href="/users/logout">Log out</a></p>
 						<div class="header-search-textbox">
 							<h5>Search</h5>
-							<form><input type="text" placeholder="Standard index #" /><input type="submit" /></form>
+							<form id="searchImage"><input id="search_index" type="text" placeholder="Standard index #" /><input type="submit" /></form>
 						</div>
 					</div>
 					<div class="clearfix"></div>
 					<div class="menu">
 						<ul>
 							<li><a href="#">New worksheet <span><img src="<?php echo $this->html->url('/img/menu-icon.png')?>" alt="icon" /></span></a>
-								<ul class="dropdown">
+								<ul class="dropdown" id="save-template">
 									<li>
 										<?php 
 											echo $this->Form->create('User', array(
@@ -31,7 +31,13 @@
 						                        'class' => 'dp-textbox-btn'
 						                    )); 
 					                    ?>
+					                   
 									</li>
+									<?php if (!empty($templates)) : ?>
+										<?php foreach ($templates as $key => $template) : ?>
+											<li><?php echo $this->Html->link($template['Sheet']['name'], array('controller' => 'users', 'action' => 'review', $template['Sheet']['id'])); ?></li>
+										<?php endforeach; ?>
+									<?php endif; ?>
 								</ul>
 							</li>
 							<li><a href="#"><?php echo $selectGrade;?> <span><img src="<?php echo $this->html->url('/img/menu-icon.png')?>" alt="icon" /></span></a>     <ul class="dropdown" id="gDropdown">
@@ -148,18 +154,45 @@ function laodsheet(id){
     $('#loadermsg').html(" Worksheet Loading....");
     $('#liloader').show();
     $.post("/users/ajax_edit_currentsheet", { id: id }, function(result) {  
-        if(result){  
+        if(result){
+        	// if( $('#figurecont').is(':empty') ) {
+        	// 	$('#figurecont').html('<ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix ui-droppable"></ul>');
+        	// }
+        	drag_images();
+        	$.post("/users/ajax_grades_dropdown", { id: id }, function(htmlData) {  
+		        if(htmlData){  
+		            $('#gDropdown').html(htmlData); 
+		        } 
+		    }); 
             $('#right_content').html(result); 
-            drag_images();
 	        $('#liloader').hide();
         }
-     //    $.post("/users/ajax_edit_availablesheet", { id: id }, function(htmlData) {  
-	    //     if(htmlData){  
-	    //         $('#figurecont').html(htmlData); 
-	    //         drag_images();
-	    //         $('#liloader').hide();
-	    //     } 
-	    // }); 
     });  
 }
+
+$("#searchImage").submit(function(event){
+	event.preventDefault(); 
+	var pathname = window.location.pathname;
+	if (pathname.indexOf("dashboard") > -1) {
+		$('#loadermsg').html(" Searching Images....");
+	    $('#liloader').show();
+		var search_index = $("#search_index").val();
+		if (search_index == '') {
+			return;
+		}
+		$.ajax({
+		      data: {search_index: search_index},
+		      type: "POST",
+		      dataType : 'html',
+		      url: "/users/ajax_search_image",
+		      success: function(data) {
+		        $('#figurecont').html(data);
+	            drag_images(); 
+				$('#liloader').hide();      
+		      }       
+	    });
+	} else { 
+		return;
+	}
+});
 </script>

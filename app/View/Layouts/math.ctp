@@ -19,6 +19,7 @@
 
   <link href="<?php echo $this->html->url('/fonts/fonts.css');?>" type="text/css" rel="stylesheet"/>
   <link rel="stylesheet" href="<?php echo $this->html->url('/css/jquery.mCustomScrollbar.css');?>">
+  <link rel="stylesheet" href="<?php echo $this->html->url('/css/jqpagination.css');?>">
 </head>
 <body style="cursor:auto">
 <div class="layout">
@@ -28,9 +29,11 @@
 
 <section class="section">
     <div class="inner-container">
-      <div class="scroll-container" id="figurecont" style="float:left;margin-top:25px;width: 64%;margin-bottom: 80px;">
-                      
-      </div>
+      <?php  
+        echo $this->Session->flash('notification');
+        echo $this->Session->flash('error');
+      ?>
+      <div class="scroll-container" id="figurecont" style="float:left;margin-top:25px;width: 64%;margin-bottom: 80px; height: 500px; overflow: auto;"></div>
       
       <div class="right" id="right_content">
         <p><?php 
@@ -43,22 +46,38 @@
         </p>
         <div class="teacher-right">
           <div class="drag ui-widget-content ui-state-default" id="trash">
-            <div><img src="<?php echo $this->html->url('/img/down-arrow.jpg');?>" alt="down-arrow" id="down-arrow">
-            <h2 id="pro">Drag Problems Here</h2></div>
+            <?php if (isset($questions)) : ?>
+              <?php echo $this->element('users/edit_sheet', array('questions' => $questions)); ?>
+            <?php else : ?>
+              <div><img src="<?php echo $this->html->url('/img/down-arrow.jpg');?>" alt="down-arrow" id="down-arrow">
+              <h2 id="pro">Drag Problems Here</h2></div>
+            <?php endif; ?>
           </div>
-          <div class="teacher-problembox">
+          <!-- <div class="teacher-problembox">
             <div class="problembox-title"><h4>Plan-What strategy will you use to help you solve this problem?</h4></div>
             <div class="problembox-content"><p>Solve</p></div>
             <div class="problembox-bottom">
               <div class="answer-label">Answer with label</div>
               <div class="answer-check">Check-Answer the question(s) with a complete sentence.</div>
             </div>
-          </div>
+          </div> -->
         </div>
-        <ul>
-          <li><input type="submit" id="delete" value="Delete Pg"/></li>
-        </ul>
-        <div class="review-btn"><?php echo $this->Html->link(__('Review'),array('controller' => 'users', 'action' => 'review'), array('class'=>'review'));?></div>
+        <?php if ($this->Session->check('Sheet')) : ?>
+        <?php if ($userDetail['User']['user_role'] != 'teacher') : ?>
+            <div id="ajaxLoadingDiv" style="display: none; margin-left: 87px;"><?php echo $this->Html->image('ajax-loader-page.gif', array('alt' => 'Content Loading')); ?></div>
+            <div class="pagination">
+                <a href="javascript:void(0)" class="previous disabled" data-rel="0" id="previousPage">&lsaquo;</a>
+                <input id="currentPage" type="text" value="Page 1 of <?php echo !empty($page_count) ? $page_count : 1 ?>" data-rel="1" max="<?php echo !empty($page_count) ? $page_count : 1 ?>" />
+                <a href="javascript:void(0)" class="next disabled"  data-rel="<?php echo !empty($page_count) ? 1 : 2 ?>" id="nextPage">&rsaquo;</a>
+            </div>
+        <?php endif; ?>
+          <ul>
+            <li><input type="submit" id="addPage" class="btn btn-primary" value="Add Pg"/></li>
+            <li><input type="submit" id="deletePage" class="btn btn-primary" value="Delete Pg"/></li>
+          </ul>
+          <div class="review-btn"><?php echo $this->Html->link(__('Review'),array('controller' => 'users', 'action' => 'review'), array('class'=>'review'));?>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
@@ -73,15 +92,34 @@
       </div>
     </div>
   </footer>
+  <div class="mydialog" style="display: none;">
+  </div>
 </div>
 
 </script>
 <script src="<?php echo $this->html->url('/js/placeholders.min.js');?>"></script>
-  
+
+<!--<script src="<?php //echo $this->html->url('/js/jquery.jqpagination.min.js');?>"></script> -->
   <!-- custom scrollbar plugin -->
   <script src="<?php echo $this->html->url('/js/jquery.mCustomScrollbar.concat.min.js');?>"></script>
   
   <script>
+    var maxPage = $("#currentPage").attr('max');
+    if (maxPage > 1) {
+      $("#nextPage").removeClass('disabled');
+    }
+    // ajax Loader
+    var IsLoaderForPage = false;
+    $(document).ajaxStart(function() {
+        if (IsLoaderForPage) 
+            $("#ajaxLoadingDiv").show(); 
+    });
+    $(document).ajaxComplete(function() {
+        if (IsLoaderForPage) 
+            $("#ajaxLoadingDiv").hide();
+        IsLoaderForPage = false;
+    });
+
     (function($){
       $(window).load(function(){
 
@@ -89,9 +127,176 @@
           theme:"rounded-dots",
           scrollInertia:400
         });
-  
-      
       });
+
+      // save teacher pdf
+      $("#addPage").click(function(event) {
+        event.preventDefault();
+        if ($("#trash").find("li").length > 0) {
+          $("#trash").find("ul").html('');
+        } else {
+            return;
+        }
+        setCookie("item_size", 0, 1);
+        $("#down-arrow").show();
+        $("#pro").show();
+        var maxPage = parseInt($("#currentPage").attr('max')) + 1;
+        $("#currentPage").attr('data-rel', maxPage);
+        $("#currentPage").attr('max', maxPage);
+        $("#previousPage").attr('data-rel', maxPage-1);
+        $("#nextPage").attr('data-rel', maxPage);
+        $("#currentPage").attr('value', parseInt($("#currentPage").attr('data-rel')) + ' Pg ' + ' of ' + maxPage);
+        if ($("#previousPage").attr('data-rel') > 0) {
+          $("#previousPage").removeClass('disabled');
+        } else {
+          $("#previousPage").addClass('disabled');
+        }
+        if ($("#nextPage").attr('data-rel') > $("#currentPage").attr('data-rel')) {
+          $("#nextPage").removeClass('disabled');
+        } else {
+          $("#nextPage").addClass('disabled');
+        }
+      });
+
+      // previous page
+      $("#previousPage").click(function(event) {
+        event.preventDefault();
+        if ($("#currentPage").attr('max') == 1) {
+          return;
+        }
+        if (parseInt($("#previousPage").attr('data-rel')) == 0) {
+          return;
+        }
+        $("#nextPage").removeClass('disabled');
+        var currentPage = parseInt($("#currentPage").attr('data-rel')) - 1;
+        var previousPage =  parseInt($("#previousPage").attr('data-rel')) - 1;
+        var maxPage =  parseInt($("#currentPage").attr('max'));
+        $("#currentPage").attr('data-rel', currentPage);
+        $("#previousPage").attr('data-rel', previousPage);
+        $("#nextPage").attr('data-rel', previousPage+1);
+        $("#currentPage").attr('value', currentPage + ' Pg ' + ' of ' + maxPage);
+        if ($("#previousPage").attr('data-rel') > 0) {
+          $("#previousPage").removeClass('disabled');
+        } else {
+          $("#previousPage").addClass('disabled');
+        }
+        if ($("#nextPage").attr('data-rel') > $("#currentPage").attr('max')) {
+          $("#nextPage").removeClass('disabled');
+        }
+        // ajax call to get page content
+        IsLoaderForPage = true;
+        $.ajax({
+              data: {page_no: currentPage-1},
+              type: "POST",
+              dataType : 'html',
+              url: "/users/ajax_page_add",
+              success: function(data) {
+                $("#trash").html(data);         
+              }       
+        });
+      });
+
+      // next page
+      $("#nextPage").click(function(event) {
+        event.preventDefault();
+        if ($("#currentPage").attr('max') == 1) {
+          return;
+        }
+        if (parseInt($("#nextPage").attr('data-rel')) == parseInt($("#currentPage").attr('max'))) {
+          return;
+        }
+        var currentPage = parseInt($("#currentPage").attr('data-rel')) + 1;
+        var nextPage =  parseInt($("#nextPage").attr('data-rel')) + 1;
+        var maxPage =  parseInt($("#currentPage").attr('max'));
+        $("#currentPage").attr('data-rel', currentPage);
+        $("#previousPage").attr('data-rel', nextPage - 1);
+        $("#nextPage").attr('data-rel', nextPage);
+        $("#currentPage").attr('value', currentPage + ' Pg ' + ' of ' + maxPage);
+        if ($("#previousPage").attr('data-rel') > 0) {
+          $("#previousPage").removeClass('disabled');
+        } else {
+          $("#previousPage").addClass('disabled');
+        }
+        if ($("#nextPage").attr('data-rel') == $("#currentPage").attr('max')) {
+          $("#nextPage").addClass('disabled');
+        }
+        // ajax call to get page content
+        IsLoaderForPage = true;
+        $.ajax({
+              data: {page_no: currentPage-1},
+              type: "POST",
+              dataType : 'html',
+              url: "/users/ajax_page_add",
+              success: function(data) {
+                $("#trash").html(data);         
+              }       
+        });
+      });
+
+      // delete current page
+      $("#deletePage").click(function(event) {
+        event.preventDefault();
+        var currentPage = parseInt($("#currentPage").attr('data-rel'));
+        var needToDelete = currentPage;
+        var previousPage =  parseInt($("#previousPage").attr('data-rel'));
+        var maxPage =  parseInt($("#currentPage").attr('max'));
+        var maxPageToSend = maxPage;
+        var nextPage =  parseInt($("#nextPage").attr('data-rel'));
+
+        
+        if ((currentPage == 1) && (maxPage == 1)) {
+          return;
+        }
+        
+
+        if ((currentPage >= 1) && (currentPage < maxPage)) {
+          // any page, not one page and not the last page
+          currentPage = currentPage;
+          maxPage = maxPage - 1;
+          previousPage = previousPage;
+          nextPage = nextPage;
+          $("#nextPage").removeClass('disabled');
+          $("#previousPage").removeClass('disabled');
+        } else if ((currentPage > 1) && (currentPage == maxPage)) {
+          // if last page delete
+          if (maxPage == 2) {
+            nextPage = 2;
+          } else {
+            nextPage = nextPage - 1;
+          }
+          currentPage = currentPage - 1;
+          maxPage = maxPage - 1;
+          previousPage = previousPage - 1;
+          $("#nextPage").addClass('disabled');
+        } else {
+          // if one page and delete
+          currentPage = 1;
+          maxPage = 1;
+          previousPage = 0;
+          nextPage = 2;
+          $("#nextPage").addClass('disabled');
+          $("#previousPage").addClass('disabled');
+        }
+
+        $("#currentPage").attr('data-rel', currentPage);
+        $("#currentPage").attr('max', maxPage);
+        $("#previousPage").attr('data-rel', previousPage);
+        $("#nextPage").attr('data-rel', nextPage);
+        $("#currentPage").attr('value', currentPage + ' Pg ' + ' of ' + maxPage);
+
+        // ajax call to remove page content
+        IsLoaderForPage = true;
+        $.ajax({
+              data: {page_no: needToDelete, max_page: maxPageToSend},
+              type: "POST",
+              dataType : 'html',
+              url: "/users/ajax_page_delete",
+              success: function(data) {
+                $("#trash").html(data);         
+              }       
+        });        
+      });
+
     })(jQuery);
   </script>
  
@@ -110,6 +315,7 @@
   #trash .gallery h5 { display: none; }
   #gallery .ui-draggable-dragging { width: 300px; height: 200px; }
   /*#trash .ui-draggable-dragging { width: 100px !important; height:  50px !important; border: 1px solid red;}*/
+  a.disabled { color:gray; }
   .review {
     background-color: #ffffff;
     color: #4f8db3;
@@ -121,10 +327,112 @@
     width: 65px;
     padding: 10px;
   }
+  .review-btn {
+    margin: 15px 0;
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+  }
+  .btn-default {
+    color: #333;
+    background-color: ash;
+    border-color: #ccc;
+    color: #2e6da4;
+  }
+  .btn {
+    box-sizing: border-box;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid #2e6da4;
+    border-radius: 4px;
+  }
   </style>
+  <script type="text/javascript">
+    // javascript cookie functions
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+       user = prompt("Please enter your name:","");
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
+    }
+}
+
+function expireActiveCookies(name) {
+      var pathname = location.pathname.replace(/\/$/, ''),
+          segments = pathname.split('/'),
+          paths = [];
+
+      for (var i = 0, l = segments.length, path; i < l; i++) {
+          path = segments.slice(0, i + 1).join('/');
+
+          paths.push(path);       // as file
+          paths.push(path + '/'); // as directory
+      }
+
+      expireAllCookies(name, paths);
+    }
+
+    function expireAllCookies(name, paths) {
+      var expires = new Date(0).toUTCString();
+
+      // expire null-path cookies as well
+      document.cookie = name + '=; expires=' + expires;
+
+      for (var i = 0, l = paths.length; i < l; i++) {
+          document.cookie = name + '=; path=' + paths[i] + '; expires=' + expires;
+      }
+    }
+
+  </script>
+  <?php if (!isset($questions)) : ?>
+    <script>
+      // initially when page load set cookie 0 for number of item
+      expireActiveCookies('item_size');
+      setCookie("item_size", 0, 1);
+    </script>
+  <?php endif; ?>
   <script>
-  // initially when page load set cookie 0 for number of item
-  setCookie("item_size", 0, 1);
 function drag_images(){
 var imgsize;
   $(function() {
@@ -161,25 +469,43 @@ var imgsize;
           ui.draggable.find(".ui-icon-trash").show();
           deleteImage( ui.draggable );
         } else {
-          //nextPage(ui.draggable);
-          //alert('Not allowed, may be your page full or need small image');
+          setCookie("item_size", 0, 1);
+          var maxPage = parseInt($("#currentPage").attr('max')) + 1;
+          $("#currentPage").attr('data-rel', maxPage);
+          $("#currentPage").attr('max', maxPage);
+          $("#previousPage").attr('data-rel', maxPage-1);
+          $("#nextPage").attr('data-rel', maxPage);
+          $("#currentPage").attr('value', parseInt($("#currentPage").attr('data-rel')) + ' Pg ' + ' of ' + maxPage);
+          if ($("#previousPage").attr('data-rel') > 0) {
+            $("#previousPage").removeClass('disabled');
+          } else {
+            $("#previousPage").addClass('disabled');
+          }
+          if ($("#nextPage").attr('data-rel') > $("#currentPage").attr('data-rel')) {
+            $("#nextPage").removeClass('disabled');
+          } else {
+            $("#nextPage").addClass('disabled');
+          }
+          ui.draggable.find(".ui-icon-zoomin").show();
+          ui.draggable.find(".ui-icon-trash").show();
+          newPage(ui.draggable);
         }
       }
     });
  
     // let the gallery be droppable as well, accepting items from the trash
-    $gallery.droppable({
-      accept: "#trash li",
-      activeClass: "custom-state-active",
-      drop: function( event, ui ) {
-        imgsize=ui.draggable.find("img").attr("imgsize");
-        ui.draggable.find(".ui-icon-zoomin").hide();
-        ui.draggable.find(".ui-icon-trash").hide();
-        recycleImage( ui.draggable );
-      }
-    });
+    // $gallery.droppable({
+    //   accept: "#trash li",
+    //   activeClass: "custom-state-active",
+    //   drop: function( event, ui ) {
+    //     imgsize=ui.draggable.find("img").attr("imgsize");
+    //     ui.draggable.find(".ui-icon-zoomin").hide();
+    //     ui.draggable.find(".ui-icon-trash").hide();
+    //     recycleImage( ui.draggable );
+    //   }
+    // });
 
-    function nextPage($item) {
+    function newPage($item) {
       $( "ul", $trash ).html('<div><img src="/img/down-arrow.jpg" alt="down-arrow" id="down-arrow" style="display: none;"><h2 id="pro" style="display: none;">Drag Problems Here</h2></div>');
       deleteImage($item);
     }
@@ -224,8 +550,9 @@ var imgsize;
         $list.find("li").each(function(i) {
             items.push($(this).attr('id'));
         });
+        var page_index = $("#currentPage").attr('data-rel');
         $.ajax({
-              data: { items : items },
+              data: { items : items, page_index : page_index-1 },
               type: "GET",
               url: "/users/save_order",
               success: function(data) {
@@ -283,8 +610,9 @@ var imgsize;
         $("#pro").show();
         $("#down-arrow").show();          
       }
+      var page_index = $("#currentPage").attr('data-rel');
       $.ajax({
-            data: { items : deleteitems },
+            data: { items : deleteitems, page_index : page_index },
             type: "GET",
             url: "/users/save_order",
             success: function(data) {
@@ -293,29 +621,23 @@ var imgsize;
       });
     }
  
+    var theDialog = $(".mydialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        modal: true,
+        width: 'auto'
+    });
+ 
     // image preview function, demonstrating the ui.dialog used as a modal window
     function viewLargerImage( $link ) {
-      var src = $link.attr( "href" ),
-        title = $link.siblings( "img" ).attr( "alt" ),
-        $modal = $( "img[src$='" + src + "']" );
- 
-      if ( $modal.length ) {
-        $modal.dialog( "open" );
-      } else {
-        var img = $( "<img alt='" + title + "' width='384' height='288' style='display: none; padding: 8px;' />" )
-          .attr( "src", src ).appendTo( "body" );
-        setTimeout(function() {
-          img.dialog({
-            title: title,
-            width: 400,
-            modal: true
-          });
-        }, 1 );
-      }
+      var src = $link.attr( "src" ),
+        title = $link.siblings( "img" ).attr( "alt" );
+      theDialog.html('<img src="'+src+'" width="auto" height="auto" />');
+            setTimeout(function(){ theDialog.dialog('open') }, 100);
     }
  
     // resolve the icons behavior with event delegation
-    $( "ul.gallery > li" ).click(function( event ) {
+    $( "ul.gallery > li" ).on("click", function( event ) {
    
       var $item = $( this ),
         $target = $( event.target );
@@ -343,51 +665,6 @@ function removeInlineStyle($item) {
       return style.replace(/display[^;]+;?/g, '');
   });
 }
-
-// javascript cookie functions
-function setCookie(cname,cvalue,exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname+"="+cvalue+"; "+expires;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function checkCookie() {
-    var user=getCookie("username");
-    if (user != "") {
-        alert("Welcome again " + user);
-    } else {
-       user = prompt("Please enter your name:","");
-       if (user != "" && user != null) {
-           setCookie("username", user, 30);
-       }
-    }
-}
-
-// $("#delete").click(function(event) {
-//   event.preventDefault();
-//   $.ajax({
-//         data: { items : items },
-//         type: "GET",
-//         url: "/users/remove_order",
-//         success: function(data) {
-//           console.log(data);     
-//         }       
-//   });    
-// });
 
   </script>
 

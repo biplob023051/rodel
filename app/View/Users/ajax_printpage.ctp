@@ -1,96 +1,116 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>
-	Rodel-math
-	</title>
-	<meta charset="UTF-8" />
-	<!--- Meta tag viewport -->
-	  <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0" /> 
-	  <meta name="viewport" content="user-scalable = yes">
-	<!--- css style -->
-	<link href="<?php echo $this->html->url('/css/style.css')?>" type="text/css" rel="stylesheet"/>
-
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
- <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-
-
-	<link href="<?php echo $this->html->url('/fonts/fonts.css');?>" type="text/css" rel="stylesheet"/>
-	<link rel="stylesheet" href="<?php echo $this->html->url('/css/jquery.mCustomScrollbar.css');?>">
-</head>
-<body style="cursor:auto">
-<div class="layout">
-<section class="section">
-		<div class="inner-container">
-			
-			<div id="left-content">
-        <div  id="image-display">
-  				<p class="center"><?php 
-                if ($this->Session->check('Sheet')) {
-                  echo $this->Session->read('Sheet.name'); 
-                } else {
-                  echo __('Create New Worksheet'); 
-                }
-            ?>
-          </p>
-  				<div class="teacher-right">
-  					<div id="trash">
-                <?php if (!empty($questions)) : ?>
-                  <ul class="gallery ui-helper-reset">
-                    <?php foreach ($questions as $key => $question) : ?>
-                      <?php if ($question['Question']['size'] == 'F') :  ?>
-                        <li id="<?php echo $question['Question']['id']; ?>" class="ui-widget-content ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 100%;">
-                          <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 100%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
-                        </li>
-                      <?php elseif ($question['Question']['size'] == 'H') : ?>
-                        <li id="<?php echo $question['Question']['id']; ?>" class="ui-widget-content ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 100%;">
-                          <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 50%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
-                        </li>
-                      <?php else : ?>
-                        <li id="<?php echo $question['Question']['id']; ?>" class="ui-widget-content ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 50%;">
-                          <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 25%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
-                        </li>
-                      <?php endif; ?>
-                    <?php endforeach; ?>  
-                  </ul>
-                <?php endif ?>
-  					</div>
-  					<div class="teacher-problembox">
-  						<div class="problembox-title"><h4>Plan-What strategy will you use to help you solve this problem?</h4></div>
-  						<div class="problembox-content"><p>Solve</p></div>
-  						<div class="problembox-bottom">
-  							<div class="answer-label">Answer with label</div>
-  							<div class="answer-check">Check-Answer the question(s) with a complete sentence.</div>
-  						</div>
-  					</div>
-  				</div>
-        </div>
-			</div>
-		</div>
-	</section>
-	<footer class="footer">
-		<div class="inner-container">
-			<div class="left">
-				<img src="<?php echo $this->html->url('/img/footer-logo.jpg');?>" alt="footer-logo">
-			</div>
-			<div class="right">
-				<h6>RodelAZ.org</h6>
-				<p>&copy;2015 Rodel Foundation of Arizona</p>
-			</div>
-		</div>
-	</footer>
-</div>
-
-</script>
-<script src="<?php echo $this->html->url('/js/placeholders.min.js');?>"></script>
-	
-	<!-- custom scrollbar plugin -->
-	<script src="<?php echo $this->html->url('/js/jquery.mCustomScrollbar.concat.min.js');?>"></script>
-
+  <link href="<?php echo $this->html->url('/css/style.css')?>" type="text/css" rel="stylesheet"/>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+   <link href="<?php echo $this->html->url('/fonts/fonts.css');?>" type="text/css" rel="stylesheet"/>
+   <link rel="stylesheet" href="<?php echo $this->html->url('/css/jquery.mCustomScrollbar.css');?>">
+  <?php if (isset($all_pages)) : ?>
+    <?php foreach ($all_pages as $key => $questions) : ?>
+      <div class="layout">
+        <section class="section">
+          <div class="inner-container">
+            <div id="left-content">
+              <div  id="image-display">
+                <p class="center"><?php 
+                      if ($this->Session->check('Sheet')) {
+                        echo $this->Session->read('Sheet.name') . ' - Page ' . ($key+1) . ' of ' . count($all_pages); 
+                      }
+                  ?>
+                </p>
+                <div class="teacher-right">
+                  <div id="trash">
+                      <?php if (!empty($questions)) : ?>
+                        <ul class="gallery ui-helper-reset">
+                          <?php foreach ($questions as $key => $question) : ?>
+                            <?php if ($question['Question']['size'] == 'F') :  ?>
+                              <li id="<?php echo $question['Question']['id']; ?>" class="ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 100%;">
+                                <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 100%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
+                              </li>
+                            <?php elseif ($question['Question']['size'] == 'H') : ?>
+                              <li id="<?php echo $question['Question']['id']; ?>" class="ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 100%;">
+                                <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 50%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
+                              </li>
+                            <?php else : ?>
+                              <li id="<?php echo $question['Question']['id']; ?>" class="ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 50%;">
+                                <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 25%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
+                              </li>
+                            <?php endif; ?>
+                          <?php endforeach; ?>  
+                        </ul>
+                      <?php endif ?>
+                  </div>
+                  <div class="teacher-problembox">
+                    <div class="problembox-title"><h4>Plan-What strategy will you use to help you solve this problem?</h4></div>
+                    <div class="problembox-content"><p>Solve</p></div>
+                    <div class="problembox-bottom">
+                      <div class="answer-label">Answer with label</div>
+                      <div class="answer-check">Check-Answer the question(s) with a complete sentence.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    <?php endforeach; ?>
+  <?php else : ?>
+    <div class="layout">
+      <section class="section">
+          <div class="inner-container">
+            
+            <div id="left-content">
+              <div  id="image-display">
+                <p class="center"><?php 
+                      if ($this->Session->check('Sheet')) {
+                        echo $this->Session->read('Sheet.name'); 
+                      } else {
+                        echo __('Create New Worksheet'); 
+                      }
+                  ?>
+                </p>
+                <div class="teacher-right">
+                  <div id="trash">
+                      <?php if (!empty($questions)) : ?>
+                        <ul class="gallery ui-helper-reset">
+                          <?php foreach ($questions as $key => $question) : ?>
+                            <?php if ($question['Question']['size'] == 'F') :  ?>
+                              <li id="<?php echo $question['Question']['id']; ?>" class="ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 100%;">
+                                <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 100%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
+                              </li>
+                            <?php elseif ($question['Question']['size'] == 'H') : ?>
+                              <li id="<?php echo $question['Question']['id']; ?>" class="ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 100%;">
+                                <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 50%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
+                              </li>
+                            <?php else : ?>
+                              <li id="<?php echo $question['Question']['id']; ?>" class="ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 50%;">
+                                <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 25%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
+                              </li>
+                            <?php endif; ?>
+                          <?php endforeach; ?>  
+                        </ul>
+                      <?php endif ?>
+                  </div>
+                  <div class="teacher-problembox">
+                    <div class="problembox-title"><h4>Plan-What strategy will you use to help you solve this problem?</h4></div>
+                    <div class="problembox-content"><p>Solve</p></div>
+                    <div class="problembox-bottom">
+                      <div class="answer-label">Answer with label</div>
+                      <div class="answer-check">Check-Answer the question(s) with a complete sentence.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+  <?php endif; ?>
  
   <style>
+  .layout {
+    min-height: 1320px !important;
+  }
+  html, body { width: 100%; height: 100%; }
+  /*html, body { height: auto; }*/
   #gallery { float: left; min-height: 12em; }
   .gallery.custom-state-active { background: #eee; }
   .gallery li { float: left; text-align: center; }
@@ -145,5 +165,3 @@
     border-radius: 4px;
   }
   </style>
-</body>
-</html>

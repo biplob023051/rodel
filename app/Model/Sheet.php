@@ -6,7 +6,6 @@ class Sheet extends AppModel {
         'SheetPage' => array(
             'className' => 'SheetPage',
             'foreignKey' => 'sheet_id',
-            'conditions' => array('OR' => array('Sheet.type' => 'admin', 'Sheet.type' => 'mathspecialist')),
             'dependent' => false
         )
     );
