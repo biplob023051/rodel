@@ -43,8 +43,22 @@
 											
 											<!--<button class="btn btn-primary" onclick="editdeleteid('<?php echo $val['User']['id'];?>')">EDIT</button-->
 											
-											<?php if($val['User']['activate']==1)echo 'Approved';else echo '<Button class="btn btn-primary" onclick="assignid('.$val['User']['id'].",'".$val['User']['email']."'".');"  data-toggle="modal" data-target="#myModal">Approve</Button>';?></td>
+											<?php if($val['User']['activate']==1)echo 'Approved';else echo '<Button class="btn btn-primary" onclick="assignid('.$val['User']['id'].",'".$val['User']['email']."'".');"  data-toggle="modal" data-target="#myModal">Approve</Button>';?>
+											
+											<a class="btn btn-xs btn-info" title="Edit" href="<?php echo $this->Html->Url('/');?>admins/addUser/<?php echo $val['User']['id'];?>">
+												<i class="ace-icon fa fa-pencil bigger-120"></i>
+												
+											</a>
+									
+											<a class="btn btn-xs btn-danger" title="Delete" href="<?php echo $this->Html->Url('/');?>admins/deleteUser/<?php echo $val['User']['id'];?>" onclick='if (confirm("Are you sure you wish to delete this?")) { return true; } return false;'>
+												<i class="ace-icon fa fa-trash-o bigger-120"></i>
+												</a>
+											
+											</td>
+											
+											
                                             
+											
                                         </tr>
 									<?php } ?>
                                        

@@ -40,33 +40,40 @@
 									<?php endif; ?>
 								</ul>
 							</li>
-							<li><a href="#"><?php echo $selectGrade;?> <span><img src="<?php echo $this->html->url('/img/menu-icon.png')?>" alt="icon" /></span></a>     <ul class="dropdown" id="gDropdown">
-									<?php
-										if ($this->Session->check('Sheet')) {
-											if(isset($listGrade)) {
-												$count=sizeof($listGrade);
-												for($i=0;$i<$count;++$i)
-												echo "<li><a href='#' onclick='grade(".$listGrade[$i]['grade_levels']['id'].")'>".$listGrade[$i]['grade_levels']['level_name']."</a></li>";
+								<li><a href="#"><label id="selectedGrade"><?php echo $selectGrade;?></label><span><img src="<?php echo $this->html->url('/img/menu-icon.png')?>" alt="icon" /></span></a>     
+									<ul class="dropdown" id="gDropdown">
+										<?php
+											if ($this->Session->check('Sheet')) {
+												if(isset($listGrade)) {
+													$count=sizeof($listGrade);
+													for($i=0;$i<$count;++$i)
+													echo "<li><a id='grade_".$i."' href='#' onclick='grade(".$listGrade[$i]['grade_levels']['id'].", this.id)'>".$listGrade[$i]['grade_levels']['level_name']."</a></li>";
 
-											}
-										} 
-									?>
-								</ul>
-								
-							</li>
-							<li><a href="#"><?php echo $selectTopics;?> <span><img src="<?php echo $this->html->url('/img/menu-icon.png');?>" alt="icon" /></span></a>
+												}
+											} 
+										?>
+									</ul>
+									
+								</li>
+							<li><a href="#"><label id="selectedTopic"><?php echo $selectTopics;?></label> <span><img src="<?php echo $this->html->url('/img/menu-icon.png');?>" alt="icon" /></span></a>
 							 <ul class="dropdown  dp-width count" id="topics"></ul>	
 							</li>
-							<li><a href="#"><?php echo $selectDomains;?> <span><img src="<?php echo $this->html->url('/img/menu-icon.png');?>" alt="icon" /></span></a><ul class="dropdown  dp-width count" id="Domains"></ul>
+							<li><a href="#"><label id="selectedDomain"><?php echo $selectDomains;?></label> <span><img src="<?php echo $this->html->url('/img/menu-icon.png');?>" alt="icon" /></span></a><ul class="dropdown  dp-width count" id="Domains"></ul>
 								
 							</li>
-							<li><a href="#">Saved worksheets <span><img src="<?php echo $this->html->url('/img/menu-icon.png')?>" alt="icon" /></span></a>
+							<li><a href="#"><label id="selectedWorksheet">Saved worksheets </label> <span><img src="<?php echo $this->html->url('/img/menu-icon.png')?>" alt="icon" /></span></a>
 								<ul class="dropdown">
 									
 									<?php if (!empty($sheets)) : ?>
-										<?php foreach ($sheets as $key => $sheet) : ?>
-											<li><a href='#' onclick=laodsheet(<?php echo $sheet['Sheet']['id']; ?>)><?php echo $sheet['Sheet']['name']; ?></a></li>
-										<?php endforeach; ?>
+										<?php if (isset($page_review)) : ?>
+											<?php foreach ($sheets as $key => $sheet) : ?>
+												<li><?php echo $this->Html->link($sheet['Sheet']['name'], array('controller' => 'users', 'action' => 'dashboard', $sheet['Sheet']['id']), array());?></li>
+											<?php endforeach; ?>
+										<?php else : ?>
+											<?php foreach ($sheets as $key => $sheet) : ?>
+												<li><a id='worksheet_<?php echo $sheet['Sheet']['id']; ?>' href='#' onclick="laodsheet(<?php echo $sheet['Sheet']['id']; ?>, this.id)"><?php echo $sheet['Sheet']['name']; ?></a></li>
+											<?php endforeach; ?>
+										<?php endif; ?>
 									<?php endif; ?>
 									
 								</ul>
@@ -79,94 +86,101 @@
 	</header>
 
 <script>
-function grade(id){  
-  
-        //get the Topic
-         $('#loadermsg').html(" Topics Loading....");
-         $('#liloader').show();
-  
-        //use ajax to run the check  
-        $.post("/users/gradelevel", { id: id },  
-            function(result){  
-                //if the result is 1  
-                
-                if(result){  
-                    //show that the username is available  
-                    $('#topics').html(result); 
-                   $('#Domains').html(''); 
-$('#figurecont').html(''); 
-$('#liloader').hide();
-  
-               } 
-        });  
+function grade(id, element){  
+	//$('#loadermsg').html(" Related Problems Loading....");
+	$('#loadermsg').html(" Related Topics Loading....");
+    $('#liloader').show();
+    $('#selectedGrade').html($("#" + element).text());
+    $('#selectedTopic').html('Math topics & tips');
+    $('#selectedDomain').html('Domains');
+
+    // load related problems
+	// $.post("/users/ajax_problems", { grade_id: id }, function(problems) {  
+	//     if(problems) {   
+	//         $('#figurecont').html(problems);
+	//         drag_images(); 
+	//     } 
+	    // load related topics
+	    
+	    $.post("/users/ajax_topics", { grade_id: id }, function(topics) {  
+            if(topics){
+            	$('#figurecont').html('');    
+				$('#topics').html(topics);  
+            }
+            // load related domains
+            $('#loadermsg').html(" Related Domains Loading....");
+            $.post("/users/ajax_domains", { grade_id: id }, function(domains) {  
+            	if(domains){    
+					$('#Domains').html(domains);  
+	            }
+	            $('#liloader').hide();
+	        });
+        });
+	// });   
   
 }  
 </script>
 <script>
-function domains(id,gid){  
-  
-        //get the Topic
-      $('#loadermsg').html(" Domains Loading....");
-         $('#liloader').show();
+function topicProblems(id, element){  
+      // Find this Topic problems
+      $('#loadermsg').html(" Problems Loading....");
+        $('#liloader').show();
+        var str = $("#" + element).text();
+		if(str.length > 16) str = str.substring(0,16);
+        $('#selectedTopic').html(str);
+    	$('#selectedDomain').html('Domains');
   
         //use ajax to run the check  
-        $.post("/users/topics", { id: id,gid:gid },  
-            function(result){  
-                //if the result is 1  
-                
-                if(result){  
-                    //show that the username is available  
-                    $('#Domains').html(result);  
-                    $('#figurecont').html(''); 
-                    $('#liloader').hide();
-               } 
+        $.post("/users/ajax_problems", { topic_id: id }, function(result){  
+            //if the result is 1
+            if(result){  
+                $('#figurecont').html(result); 
+                drag_images();
+                $('#liloader').hide();
+           } 
         });  
   
 }  
 </script>
 <script>
 
-function pics(tid,gid,id){  
-  
-        //get the Topic
-       $('#loadermsg').html(" Figures Loading....");
-         $('#liloader').show();
-  
-        //use ajax to run the check  
-        $.post("/users/domains", { id: id,gid:gid,tid:tid },  
-            function(result){  
-                //if the result is 1  
-                
-                if(result){  
-                    //show that the username is available  
-                    $('#figurecont').html(result);
-                    //setCookie("item_size", 0, 1); 
-                    drag_images(); 
-$('#liloader').hide();
-               } 
-        });  
-
-  
+function domainProblems(id, element){  
+    // Find this Domain Problems
+	$('#loadermsg').html(" Problems Loading....");
+	$('#liloader').show();
+	var str = $("#" + element).text();
+	if(str.length > 16) str = str.substring(0,16);
+	$('#selectedDomain').html(str);
+	$('#selectedTopic').html('Math topics & tips');
+    
+	$.post("/users/ajax_problems", { domain_id: id }, function(result) {  
+		if(result){  
+			$('#figurecont').html(result);
+			drag_images();
+			$('#liloader').hide();
+		} 
+	});   
 }  
 
 // load individual saved sheets for edit 
-function laodsheet(id){  
+function laodsheet(id, element){  
     $('#loadermsg').html(" Worksheet Loading....");
     $('#liloader').show();
+    $('#selectedWorksheet').html($("#" + element).text());
     $.post("/users/ajax_edit_currentsheet", { id: id }, function(result) {  
         if(result){
         	// if( $('#figurecont').is(':empty') ) {
         	// 	$('#figurecont').html('<ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix ui-droppable"></ul>');
         	// }
-        	drag_images();
-        	$.post("/users/ajax_grades_dropdown", { id: id }, function(htmlData) {  
-		        if(htmlData){  
-		            $('#gDropdown').html(htmlData); 
-		        } 
-		    }); 
-            $('#right_content').html(result); 
-	        $('#liloader').hide();
+        	drag_images(); 
+            $('#right_content').html(result);
         }
+        $.post("/users/ajax_grades_dropdown", { id: id }, function(htmlData) {  
+	        if(htmlData){  
+	            $('#gDropdown').html(htmlData); 
+	        }
+	        $('#liloader').hide(); 
+	    });
     });  
 }
 
@@ -174,7 +188,7 @@ $("#searchImage").submit(function(event){
 	event.preventDefault(); 
 	var pathname = window.location.pathname;
 	if (pathname.indexOf("dashboard") > -1) {
-		$('#loadermsg').html(" Searching Images....");
+		$('#loadermsg').html(" Searching Problems....");
 	    $('#liloader').show();
 		var search_index = $("#search_index").val();
 		if (search_index == '') {

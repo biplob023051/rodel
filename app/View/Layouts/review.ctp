@@ -11,9 +11,9 @@
 	<!--- css style -->
 	<link href="<?php echo $this->html->url('/css/style.css')?>" type="text/css" rel="stylesheet"/>
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
- <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="<?php echo $this->html->url('/css/jquery-ui.css');?>">
+ <script src="<?php echo $this->html->url('/js/jquery-1.10.2.js');?>"></script>
+<script src="<?php echo $this->html->url('/js/jquery-ui.js');?>"></script>
 
 
 
@@ -51,15 +51,15 @@
                     <?php foreach ($questions as $key => $question) : ?>
                       <?php if ($question['Question']['size'] == 'F') :  ?>
                         <li id="<?php echo $question['Question']['id']; ?>" class="ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 100%;">
-                          <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 100%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
+                          <img src="<?php echo $this->request->base; ?>/questionimages/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 100%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
                         </li>
                       <?php elseif ($question['Question']['size'] == 'H') : ?>
                         <li id="<?php echo $question['Question']['id']; ?>" class="ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 100%;">
-                          <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 50%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
+                          <img src="<?php echo $this->request->base; ?>/questionimages/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 50%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
                         </li>
                       <?php else : ?>
                         <li id="<?php echo $question['Question']['id']; ?>" class="ui-corner-tr ui-draggable ui-draggable-handle" style="display: list-item; width: 50%;">
-                          <img src="/img/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 25%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
+                          <img src="<?php echo $this->request->base; ?>/questionimages/<?php echo $question['Question']['file_name']; ?>" style="display: inline-block; height: 25%;" alt="quesimg"  class="img1 mCS_img_loaded" imgsize="<?php echo $question['Question']['size']; ?>">
                         </li>
                       <?php endif; ?>
                     <?php endforeach; ?>  

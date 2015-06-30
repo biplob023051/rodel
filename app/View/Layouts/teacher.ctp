@@ -11,9 +11,9 @@
   <!--- css style -->
   <link href="<?php echo $this->html->url('/css/style.css')?>" type="text/css" rel="stylesheet"/>
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
- <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="<?php echo $this->html->url('/css/jquery-ui.css');?>">
+ <script src="<?php echo $this->html->url('/js/jquery-1.10.2.js');?>"></script>
+<script src="<?php echo $this->html->url('/js/jquery-ui.js');?>"></script>
 
 
 
@@ -121,6 +121,8 @@
   #trash h4 .ui-icon { float: left; }
   #trash .gallery h5 { display: none; }
   #gallery .ui-draggable-dragging { width: 300px; height: 200px; }
+  #trash ul.gallery .ui-draggable-dragging { width: 300px !important; height: 200px !important; }
+  #trash ul.gallery .ui-draggable-dragging img { height: 100% !important; }
   /*#trash .ui-draggable-dragging { width: 100px !important; height:  50px !important; border: 1px solid red;}*/
   .review {
     background-color: #ffffff;
@@ -246,7 +248,11 @@ var imgsize;
           //alert('Not allowed, may be your page full or need small image');
         }
       }
+    }).sortable({
+      items: "li"
     });
+
+    $( "#trash li" ).disableSelection();
  
     // let the gallery be droppable as well, accepting items from the trash
     // $gallery.droppable({
@@ -385,12 +391,8 @@ var imgsize;
     function viewLargerImage( $link ) {
       var src = $link.attr( "src" ),
         title = $link.siblings( "img" ).attr( "alt" );
-
-      // $('<div />').html('<img src="'+src+'" alt="'+title+'" width="600" height="400" class="img1 mCS_img_loaded" imgsize="H">').dialog();
-
       theDialog.html('<img src="'+src+'" width="auto" height="auto" />');
             setTimeout(function(){ theDialog.dialog('open') }, 100);
-
     }
  
     // resolve the icons behavior with event delegation

@@ -28835,3 +28835,2544 @@ Stack Trace:
 #1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2015-06-26 19:25:06 Error: [MissingActionException] Action UsersController::link() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'link',
+)
+Request URL: /users/link/to/recycle/script/when/we/have/js/off
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-28 16:11:20 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grade_id' in 'where clause'
+Request URL: /users/gradelevel
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('select * from t...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('select * from t...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(537): DboSource->fetchAll('select * from t...')
+#4 [internal function]: DboSource->query('select * from t...')
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(3304): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(201): Model->query('select * from t...')
+#7 [internal function]: UsersController->gradelevel()
+#8 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-06-28 16:36:21 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'Topic'
+Request URL: /users/ajax_topics
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('SELECT `TopicGr...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('SELECT `TopicGr...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1077): DboSource->fetchAll('SELECT `TopicGr...', false)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): DboSource->read(Object(TopicGrade), Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('all', Array)
+#6 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(706): Model->find('all', Array)
+#7 [internal function]: UsersController->ajax_topics()
+#8 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-06-28 16:39:42 Error: [MissingActionException] Action UsersController::ajax_problems() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'ajax_problems',
+)
+Request URL: /users/ajax_problems
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-28 16:42:28 Error: [MissingActionException] Action UsersController::ajax_problems() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'ajax_problems',
+)
+Request URL: /users/ajax_problems
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-28 16:49:58 Error: [MissingActionException] Action UsersController::ajax_problems() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'ajax_problems',
+)
+Request URL: /users/ajax_problems
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-28 17:01:23 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/11014S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 17:01:23 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/11014E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 17:01:23 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/11014A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 37]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 37]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 37]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 55]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 75]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 75
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 75]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 75
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:04:31 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Admins\editrecords.ctp, line 75]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Admins\editrecords.ctp, line 75
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 17:09:10 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11014S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 17:09:10 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11014A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 17:09:10 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11014E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:42:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grade_id' in 'where clause'
+Request URL: /users/topics
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('select * from d...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(665): DboSource->execute('select * from d...', Array, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(537): DboSource->fetchAll('select * from d...')
+#4 [internal function]: DboSource->query('select * from d...')
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(3304): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(232): Model->query('select * from d...')
+#7 [internal function]: UsersController->topics()
+#8 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-06-28 19:52:06 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:52:06 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:52:06 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:52:06 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 66]
+Trace:
+include - APP\View\Domains\add.ctp, line 66
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:52:42 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:52:42 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:52:42 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:52:42 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:52:42 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:52:42 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:53:39 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:53:39 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:53:39 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:53:39 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:53:39 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:53:40 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 19:54:47 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:54:47 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:54:47 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:54:47 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 66]
+Trace:
+include - APP\View\Domains\add.ctp, line 66
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:55:15 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:55:15 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:55:15 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 19:55:15 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 66]
+Trace:
+include - APP\View\Domains\add.ctp, line 66
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 20:26:06 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:26:06 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:26:06 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:30:02 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/11014A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:30:02 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/11014S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:30:02 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/11014A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:30:02 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/11014S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:35:20 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:35:54 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:35:54 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:13 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:16 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:17 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:34 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:34 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:34 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:44 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:44 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:44 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:52 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:52 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:36:52 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:37:01 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:37:01 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:37:01 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:37:04 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:37:04 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:37:04 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:10 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:19 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:19 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:19 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:24 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:27 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:27 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:27 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:39 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:39 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:38:40 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:42:28 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:51:43 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:52:08 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:52:08 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:52:08 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:52:56 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:52:56 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:52:56 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:53:02 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:53:02 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:53:02 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:54:51 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:56:29 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:57:24 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:57:32 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 20:59:22 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 21:05:07 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:05:07 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:05:07 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:05:07 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 66]
+Trace:
+include - APP\View\Domains\add.ctp, line 66
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:05:14 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Topics\add.ctp, line 51]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Topics\add.ctp, line 51
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:05:14 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Topics\add.ctp, line 51]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Topics\add.ctp, line 51
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:05:14 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Topics\add.ctp, line 51]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Topics\add.ctp, line 51
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:05:54 Error: [MissingControllerException] Controller class AddUserController could not be found.
+Exception Attributes: array (
+  'class' => 'AddUserController',
+  'plugin' => NULL,
+)
+Request URL: /admin/addUser
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 21:06:19 Error: [MissingControllerException] Controller class AdminController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminController',
+  'plugin' => NULL,
+)
+Request URL: /admin/
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 21:10:05 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Topics\add.ctp, line 51]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Topics\add.ctp, line 51
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:10:05 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Topics\add.ctp, line 51]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Topics\add.ctp, line 51
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:10:05 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Topics\add.ctp, line 51]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Topics\add.ctp, line 51
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:10:22 Error: [MissingViewException] View file "C:\xampp\htdocs\rodel\app\View\Templates\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\rodel\\app\\View\\Templates\\index.ctp',
+)
+Request URL: /templates
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\View\View.php(457): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(952): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#3 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TemplatesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-06-28 21:10:33 Error: [MissingViewException] View file "C:\xampp\htdocs\rodel\app\View\Templates\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\rodel\\app\\View\\Templates\\index.ctp',
+)
+Request URL: /templates
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\View\View.php(457): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(952): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#3 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TemplatesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-06-28 21:18:24 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\xampp\htdocs\rodel\app\Controller\TemplatesController.php, line 13]
+2015-06-28 21:18:24 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /templates
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 13, Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 13, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-28 21:25:16 Error: [MissingActionException] Action TemplatesController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'TemplatesController',
+  'action' => 'add',
+)
+Request URL: /templates/add
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TemplatesController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-28 21:38:53 Error: [MissingActionException] Action TemplatesController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'TemplatesController',
+  'action' => 'add',
+)
+Request URL: /templates/add
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TemplatesController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-28 21:39:45 Error: [MissingActionException] Action TemplatesController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'TemplatesController',
+  'action' => 'add',
+)
+Request URL: /templates/add
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TemplatesController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-28 21:41:38 Error: [MissingControllerException] Controller class GradelevelController could not be found.
+Exception Attributes: array (
+  'class' => 'GradelevelController',
+  'plugin' => NULL,
+)
+Request URL: /gradelevel/add
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 21:41:46 Error: [MissingControllerException] Controller class GradelevelsController could not be found.
+Exception Attributes: array (
+  'class' => 'GradelevelsController',
+  'plugin' => NULL,
+)
+Request URL: /gradelevels/add
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 21:41:58 Error: [MissingControllerException] Controller class GradelevelsController could not be found.
+Exception Attributes: array (
+  'class' => 'GradelevelsController',
+  'plugin' => NULL,
+)
+Request URL: /gradelevels/add
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-28 21:42:05 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Topics\add.ctp, line 51]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Topics\add.ctp, line 51
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:42:05 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Topics\add.ctp, line 51]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Topics\add.ctp, line 51
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:42:05 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Topics\add.ctp, line 51]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Topics\add.ctp, line 51
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:42:17 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:42:17 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:42:17 Warning: Warning (2): in_array() expects parameter 2 to be array, null given in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 52]
+Trace:
+in_array - [internal], line ??
+include - APP\View\Domains\add.ctp, line 52
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:42:17 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Domains\add.ctp, line 66]
+Trace:
+include - APP\View\Domains\add.ctp, line 66
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:42:58 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 48]
+Trace:
+include - APP\View\Templates\add.ctp, line 48
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:47:55 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 40]
+Trace:
+include - APP\View\Templates\add.ctp, line 40
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-28 21:49:26 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 102]
+Trace:
+include - APP\View\Templates\add.ctp, line 102
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 14:05:11 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:05:11 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img23.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:05:42 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:05:42 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img23.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:16:26 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:16:26 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:16:26 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:24:11 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:24:11 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img23.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:27:30 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img23.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:27:30 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:27:45 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:27:45 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:27:45 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-29 14:33:05 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 102]
+Trace:
+include - APP\View\Templates\add.ctp, line 102
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 14:35:49 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 243]
+Trace:
+include - APP\View\Templates\add.ctp, line 243
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 14:36:45 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 255]
+Trace:
+include - APP\View\Templates\add.ctp, line 255
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 14:37:31 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 255]
+Trace:
+include - APP\View\Templates\add.ctp, line 255
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 14:38:36 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 254]
+Trace:
+include - APP\View\Templates\add.ctp, line 254
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 14:41:14 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 254]
+Trace:
+include - APP\View\Templates\add.ctp, line 254
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 14:50:06 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 254]
+Trace:
+include - APP\View\Templates\add.ctp, line 254
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 15:59:17 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 254]
+Trace:
+include - APP\View\Templates\add.ctp, line 254
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 16:04:25 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 255]
+Trace:
+include - APP\View\Templates\add.ctp, line 255
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 16:04:51 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 255]
+Trace:
+include - APP\View\Templates\add.ctp, line 255
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 16:06:52 Error: Fatal Error (4): syntax error, unexpected ''empty'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 63]
+2015-06-29 16:06:52 Error: [InternalErrorException] Internal Server Error
+Request URL: /templates/add
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 63)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 63, Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 63, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-29 16:07:02 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 255]
+Trace:
+include - APP\View\Templates\add.ctp, line 255
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 16:09:04 Warning: Warning (2): Invalid argument supplied for foreach() in [C:\xampp\htdocs\rodel\app\View\Templates\add.ctp, line 255]
+Trace:
+include - APP\View\Templates\add.ctp, line 255
+View::_evaluate() - CORE\Cake\View\View.php, line 929
+View::_render() - CORE\Cake\View\View.php, line 891
+View::render() - CORE\Cake\View\View.php, line 460
+Controller::render() - CORE\Cake\Controller\Controller.php, line 952
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2015-06-29 17:04:00 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 05:20:25 Error: [MissingActionException] Action TemplatesController::ajax_topics() could not be found.
+Exception Attributes: array (
+  'controller' => 'TemplatesController',
+  'action' => 'ajax_topics',
+)
+Request URL: /templates/ajax_topics
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TemplatesController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-30 05:20:58 Error: [MissingActionException] Action TemplatesController::ajax_topics() could not be found.
+Exception Attributes: array (
+  'controller' => 'TemplatesController',
+  'action' => 'ajax_topics',
+)
+Request URL: /templates/ajax_topics
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TemplatesController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-30 05:23:20 Error: Fatal Error (1): Call to a member function query() on a non-object in [C:\xampp\htdocs\rodel\app\Controller\TemplatesController.php, line 387]
+2015-06-30 05:23:20 Error: [FatalErrorException] Call to a member function query() on a non-object
+Request URL: /templates/ajax_grades_dropdown
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 387)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 387, Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 387, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-30 05:23:36 Error: Fatal Error (1): Call to a member function query() on a non-object in [C:\xampp\htdocs\rodel\app\Controller\TemplatesController.php, line 387]
+2015-06-30 05:23:36 Error: [FatalErrorException] Call to a member function query() on a non-object
+Request URL: /templates/ajax_grades_dropdown
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 387)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 387, Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 387, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-30 05:31:46 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) in [C:\xampp\htdocs\rodel\app\Controller\TemplatesController.php, line 343]
+2015-06-30 05:31:46 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION)
+Request URL: /templates/add
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 343)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 343, Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 343, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-30 06:04:21 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\rodel\app\Controller\TemplatesController.php, line 215]
+2015-06-30 06:04:21 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /templates/review
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 215)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 215, Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 215, Array)
+#3 C:\xampp\htdocs\rodel\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-06-30 06:09:41 Error: [MissingActionException] Action TemplatesController::dashboard() could not be found.
+Exception Attributes: array (
+  'controller' => 'TemplatesController',
+  'action' => 'dashboard',
+)
+Request URL: /templates/dashboard/edit
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TemplatesController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-30 06:13:06 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_id' cannot be null
+Request URL: /templates/ajax_savepage
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `ro...', Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(1004): DboSource->execute('INSERT INTO `ro...')
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(1832): DboSource->create(Object(Sheet), Array, Array)
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2390): Model->save(Array, Array)
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2176): Model->saveAssociated(Array, Array)
+#6 C:\xampp\htdocs\rodel\app\Controller\TemplatesController.php(254): Model->saveAll(Array)
+#7 [internal function]: TemplatesController->ajax_savepage()
+#8 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(TemplatesController), Array)
+#9 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TemplatesController), Object(CakeRequest), Object(CakeResponse))
+#11 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2015-06-30 06:27:11 Error: [MissingViewException] View file "C:\xampp\htdocs\rodel\app\View\Topics\delete.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\rodel\\app\\View\\Topics\\delete.ctp',
+)
+Request URL: /topics/delete/22
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\View\View.php(457): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(952): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#3 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(TopicsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-06-30 06:36:59 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:37:03 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:39:21 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:39:22 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:40:20 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:40:20 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:40:38 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:40:52 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:40:57 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:41:01 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:41:01 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:46:57 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:46:59 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:46:59 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:48:01 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:48:27 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:50:44 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:52:23 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:52:23 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:52:37 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:52:38 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:53:11 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 06:53:11 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:01:51 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:01:52 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:02:14 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:02:14 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:17:05 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:17:06 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:17:14 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:17:41 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:17:41 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:18:15 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:18:19 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:18:24 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:18:26 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img22.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:23:01 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:23:28 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:23:32 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/addition-subtraction-img25.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:23:48 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:24:00 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:26:40 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:26:40 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:27:39 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:28:04 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:28:04 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:28:04 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:28:24 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 07:28:24 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 14:57:06 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 14:57:10 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 14:57:10 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:10:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:10:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:10:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/images/ui-icons_888888_256x240.png
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:10:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:10:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:10:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/images/ui-icons_2e83ff_256x240.png
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:10:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:21:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:23:50 Error: [MissingActionException] Action UsersController::11014E.jpg() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => '11014E.jpg',
+)
+Request URL: /users/11014E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-06-30 15:25:27 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11121E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:25:29 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/11014E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:34:04 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:34:04 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:34:04 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:34:07 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:34:07 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:34:07 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:34:41 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051S.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:34:41 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051E.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 15:34:42 Error: [MissingControllerException] Controller class QuestionimagesController could not be found.
+Exception Attributes: array (
+  'class' => 'QuestionimagesController',
+  'plugin' => NULL,
+)
+Request URL: /questionimages/11051A.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-06-30 18:00:55 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+',
+  'enabled' => true,
+)
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\rodel\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\rodel\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(3474): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(1126): Model->setDataSource('default')
+#4 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(3496): Model->setSource('sheets')
+#5 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2900): Model->getDataSource()
+#6 C:\xampp\htdocs\rodel\lib\Cake\Model\Model.php(2872): Model->_readDataSource('all', Array)
+#7 C:\xampp\htdocs\rodel\app\Controller\UsersController.php(18): Model->find('all', Array)
+#8 [internal function]: UsersController->beforeFilter(Object(CakeEvent))
+#9 C:\xampp\htdocs\rodel\lib\Cake\Event\CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#10 C:\xampp\htdocs\rodel\lib\Cake\Controller\Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(182): Controller->startupProcess()
+#12 C:\xampp\htdocs\rodel\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\xampp\htdocs\rodel\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}

@@ -145,22 +145,38 @@ public function changepassword($email='')
                 	} else {
                 		$this->layout='math';
                 	}
+                	// load all saved sheet
+					$this->loadModel('Sheet');
                 	if ($editWorkSheet) {
-						$review_data = $this->Session->read('SheetPage');
-						// if session expired
-						if (empty($review_data)) {
-							$this->Session->delete('Sheet');
-							$this->Session->delete('SheetPage');
-							return $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
-						}
-						$this->set('questions', json_decode($review_data[0], true));
-						$this->set('page_count', count($review_data));
+                		if ($editWorkSheet == 'edit') {
+                			$review_data = $this->Session->read('SheetPage');
+							// if session expired
+							if (empty($review_data)) {
+								$this->Session->delete('Sheet');
+								$this->Session->delete('SheetPage');
+								return $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
+							}
+							$this->set('questions', json_decode($review_data[0], true));
+							$this->set('page_count', count($review_data));
+                		} else {
+                			$editSheet = $this->Sheet->find('first', array(
+                				'conditions' => array('Sheet.id' => $editWorkSheet, 'Sheet.user_id' => $userData['User']['id'])
+                			));
+                			if (empty($editSheet)) {
+                				$this->Session->delete('Sheet');
+								$this->Session->delete('SheetPage');
+								return $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
+                			} else { 
+                				$this->Session->write('Sheet.name', $editSheet['Sheet']['name']);
+                				$this->Session->write('SheetPage.0', $editSheet['SheetPage'][0]['params']);
+                				$this->set('questions', json_decode($editSheet['SheetPage'][0]['params'], true));
+								$this->set('page_count', count($editSheet['SheetPage']));
+                			}
+                		}
 					} else {
 						$this->Session->delete('Sheet');
 						$this->Session->delete('SheetPage');
 					}
-					// load all saved sheet
-					$this->loadModel('Sheet');
 					$this->Sheet->unbindModel(array('hasMany' => array('SheetPage'), 'hasOne' => array('TeacherPage')));
                 	// check if form post  
                 	if ($this->request->is(array('post','put'))) {
@@ -202,7 +218,7 @@ public function changepassword($email='')
                 $countvalue=sizeof($topics);                
                 if($countvalue>0){
                 for($i=0;$i<$countvalue;++$i)
-                echo "<li> <a href='#' onclick='domains(".$topics[$i]['topics']['id'].",".$_POST['id'].")"."'>".$topics[$i]['topics']['topic_name']."</a></li>";
+                echo "<li> <a id='topic_".$topics[$i]['topics']['id']."' href='#' onclick='domains(".$topics[$i]['topics']['id'].",".$_POST['id'].", this.id)"."'>".$topics[$i]['topics']['topic_name']."</a></li>";
 
 }
 else{echo "<li><a href='#'>No Topics Found</a></li>";}
@@ -233,7 +249,7 @@ public function topics()
                 $countvalue=sizeof($domains);                
                 if($countvalue>0){
                 for($i=0;$i<$countvalue;++$i)
-                echo "<li> <a href='#' onclick='pics(".$domains[$i]['domains']['id'].",".$_POST['id'].",".$_POST['gid'].")"."'>".$domains[$i]['domains']['domain_name']."</a></li>";
+                echo "<li> <a id='domain_".$domains[$i]['domains']['id']."' href='#' onclick='pics(".$domains[$i]['domains']['id'].",".$_POST['id'].",".$_POST['gid'].", this.id)"."'>".$domains[$i]['domains']['domain_name']."</a></li>";
 
 }
 else{echo "<li><a href='#'>No Topics Found</a></li>";}
@@ -457,7 +473,7 @@ else{echo "<li><a href='#'>No Topics Found</a></li>";}
 	}
 
 	/*
-	* Teacher page review
+	* Worksheet review
 	*/
 	public function review($template_id = null) {
 		$this->layout = 'review';
@@ -494,6 +510,12 @@ else{echo "<li><a href='#'>No Topics Found</a></li>";}
 			$this->set('selectTopics',"Math topics &amp; tips");
 			$this->set('selectDomains',"Domains");
 		}
+		$sheets = $this->Sheet->find('all', array(
+						'conditions' => array('Sheet.user_id' => $userData['User']['id']),
+						'fields' => array('Sheet.id', 'Sheet.name')
+					));
+		$this->set(compact('sheets'));
+		$this->set('page_review', true);
 	}
 
 	/*
@@ -683,6 +705,64 @@ else{echo "<li><a href='#'>No Topics Found</a></li>";}
 			'fields' => array('Question.id', 'Question.file_name', 'Question.size')
 		));
         $this->set(compact('questions'));
+	}
+
+	/*
+	* Find all Problems or Questions
+	*/
+	public function ajax_problems() {
+		$this->layout = 'ajax';
+		if (!empty($this->request->data['grade_id'])) { // if problems searching by grade level
+			$this->loadModel('QuestionGrade');
+			$this->QuestionGrade->unbindModel(array('hasMany' => array('GradeLevel')));
+			$questions = $this->QuestionGrade->find('all', array(
+				'conditions' => array('QuestionGrade.grade_id' => $this->request->data['grade_id']),
+				'fields' => array('Question.*')
+			));
+		} elseif (!empty($this->request->data['topic_id'])) { // if problem searching by topic
+			$this->loadModel('QuestionTopic');
+			$this->QuestionTopic->unbindModel(array('hasMany' => array('Topic')));
+			$questions = $this->QuestionTopic->find('all', array(
+				'conditions' => array('QuestionTopic.topic_id' => $this->request->data['topic_id']),
+				'fields' => array('Question.*')
+			));
+		} elseif (!empty($this->request->data['domain_id'])) { // if problem searching by domain
+			$this->loadModel('QuestionDomain');
+			$this->QuestionDomain->unbindModel(array('hasMany' => array('Domain')));
+			$questions = $this->QuestionDomain->find('all', array(
+				'conditions' => array('QuestionDomain.domain_id' => $this->request->data['domain_id']),
+				'fields' => array('Question.*')
+			));
+		}
+		$this->set(compact('questions'));
+	}
+
+	/*
+	* Find all Topics by grade level
+	*/
+	public function ajax_topics() {
+		$this->layout = 'ajax';
+		$this->loadModel('TopicGrade');
+		$this->TopicGrade->unbindModel(array('hasMany' => array('GradeLevel')));
+		$topics = $this->TopicGrade->find('all', array(
+			'conditions' => array('TopicGrade.grade_id' => $this->request->data['grade_id']),
+			'fields' => array('Topic.id', 'Topic.topic_name')
+		));
+		$this->set(compact('topics'));
+	}
+
+	/*
+	* Find all Domains by grade level
+	*/
+	public function ajax_domains() {
+		$this->layout = 'ajax';
+		$this->loadModel('DomainGrade');
+		$this->DomainGrade->unbindModel(array('hasMany' => array('GradeLevel')));
+		$domains = $this->DomainGrade->find('all', array(
+			'conditions' => array('DomainGrade.grade_id' => $this->request->data['grade_id']),
+			'fields' => array('Domain.id', 'Domain.domain_name')
+		));
+		$this->set(compact('domains'));
 	}
 	
 	

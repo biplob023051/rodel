@@ -11,6 +11,9 @@
 
     <title>Rodel Math Admin</title>
 
+	<!-- jQuery -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	
     <!-- Bootstrap Core CSS -->
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -35,6 +38,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
+	<link href="/css/jquery.tokenize.css" rel="stylesheet">
 <style>
 
 .navbar-default
@@ -52,8 +57,53 @@
  
  .nav>li>a{text-decoration:none;background-color:#a0cd4e}
  .sidebar ul li a.active{color:#23527c;}
+ .page-header
+ {
+   margin: 20px 0 20px;
+ }
  
+ .sidebar ul li a.active
+ {
+ border: 1px solid #fff;
+ }
  
+ .btn-primary {
+  color: #fff;
+  margin-top: 1%;
+  text-transform: uppercase;
+  }
+  .center
+  {
+  text-align:center;
+  }
+  
+  label {
+  
+  margin-top: 2%;
+}
+
+div.Tokenize
+{
+  border: 0px;
+  padding: 0px;
+}
+ 
+ .sidebar ul li a.inactive
+ {
+border-bottom: 0px solid #e7e7e7; 
+ background-color: #a0cd4e;
+ }
+ 
+ .sidebar ul li a.editactive {
+  border: 1px solid #fff;
+}
+.sidebar ul li a.editactive {
+  color: #23527c;
+}
+.sidebar ul li a.editactive {
+  background-color: #eee;
+}
+
 </style>
 </head>
 
@@ -97,23 +147,65 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="/admins/index"><i class="fa fa-dashboard fa-fw"></i> Users</a>
+						
+                            <a class="<?php echo $useractive;?>" href="/admins/index"><i class="fa fa-dashboard fa-fw"></i> Users</a>
+							<ul class="nav nav-second-level">
+								<li><a href="/admins/addUser" class="<?php echo $adduser;?>"><i class="fa fa-plus fa-fw"></i>Add User</a></li>
+								
+								<li><a href="/admins/index" class="<?php echo $listuser;?>"><i class="fa fa-th-list fa-fw"></i>List</a></li>
+								<li><a href="/admins/importUsers" class="<?php echo $importuser;?>"><i class="fa fa-share fa-fw"></i>Import CSV</a></li>
+							</ul>
+							
                         </li>
-                          <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Grades</a>
+                          <li class="<?php echo $gradeactive;?>">
+                                <a class="<?php echo $gradeactive;?> <?php echo $editgradeactive;?>" href="/admins/gradelist"><i class="fa fa-dashboard fa-fw"></i> Grades</a>
+                                 <ul class="nav nav-second-level <?php if($gradeactive){?> in <?php } ?>">
+									<li><a href="/admins/addgrade" class="<?php echo $addgrade;?>"><i class="fa fa-plus fa-fw"></i>Add Grade</a></li>
+									<li><a class="<?php echo $listgrade;?>" href="/admins/gradelist"><i class="fa fa-th-list fa-fw"></i>List</a></li>
+									
+								</ul>
                         </li>
-<li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Domains</a>
-                        </li>
-<li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Topics</a>
-                        </li>
-<li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i>Templates</a>
+						<li >
+						   <a class="<?php echo $topicactive;?>" href="/topics/"><i class="fa fa-dashboard fa-fw"></i>Topics</a>
+						   
+							<ul class="nav nav-second-level">
+								<li><a  class="<?php echo $addtopic;?>" href="/topics/add"><i class="fa fa-plus fa-fw"></i>Add Topic</a></li>
+								
+								<li><a  class="<?php echo $listtopic;?>"
+								href="/topics"><i class="fa fa-th-list fa-fw"></i>List</a></li>
+							</ul>
                         </li>
 						<li>
-                            <a href="/admins/importcs"><i class="fa fa-dashboard fa-fw"></i> Import</a>
+                            <a class="<?php echo $domainactive;?>" href="/domains/"><i class="fa fa-dashboard fa-fw"></i> Domains</a>
+							
+							<ul class="nav nav-second-level">
+								<li><a class="<?php echo $adddomain;?>" href="/domains/add"><i class="fa fa-plus fa-fw"></i>Add Domain</a></li>
+								
+								<li><a class="<?php echo $listdomain;?>" href="/domains"><i class="fa fa-th-list fa-fw"></i>List</a></li>
+							</ul>
+							
                         </li>
+						<li >
+                           <a href="/templates"><i class="fa fa-dashboard fa-fw"></i>Templates</a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="/templates/add"><i class="fa fa-plus fa-fw"></i>Add Template</a></li>
+                                <li><a href="/templates"><i class="fa fa-th-list fa-fw"></i>List</a></li>
+                            </ul>
+                        </li>
+						<li>
+						    <a href="#"><i class="fa fa-dashboard fa-fw"></i>Records</a>
+                            
+							<ul class="nav nav-second-level">
+								<li><a class="<?php echo $addrecord;?>" href="/admins/editrecords/"><i class="fa fa-plus fa-fw"></i>Add Record</a></li>
+								<li><a class="<?php echo $listrecord;?>" href="/admins/records/1"><i class="fa fa-th-list fa-fw"></i>  List</a></li>
+								
+								<li><a class="<?php echo $importrecord;?>" href="/admins/importcs"><i class="fa fa-share fa-fw"></i> Import List</a></li>
+								
+								
+							</ul>
+							
+                        </li>
+						
                         
                     </ul>
                 </div>
@@ -132,8 +224,8 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    
+	<script src="/js/jquery.tokenize.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
